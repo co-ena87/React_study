@@ -59,7 +59,9 @@ console.log(none);
 
 // Null VS Undefined Type
 
-//Undefined 값은 변수를 선언하고 아무런 값도 할당하지 않았을때 그냥 자동으로 들어가는 값
+// Undefined 값은 변수를 선언하고 아무런 값도 할당하지 않았을때 JS 자체 내에서 자동으로 넣는다
 // 변수를 초기화 하지 못했거나 존재하지 않는 어떤 값을 불러오려고 할 때 발생할 수 있는 값
 
-//Null 값은 직접 개발자가 명시적으로 할당한 값
+// null 값은 직접 개발자가 명시적으로 할당한 값
+// const [user, setUser] = useState(null);
+// null로 시작한 이유는 아직 서버에서 사용자 데이터를 안 받아왔기 때문이다
