@@ -4,14 +4,15 @@
 
 
 // 덧셈
-function add(a,b){
-    return a + b;
-}
+// function add(a,b){
+//     return a + b;
+// }
 
 //뺄셈
-function sub(a,b){
-    return a - b;
-}
+// function sub(a,b){
+//     return a - b;
+// }
+
 // 모듈 시스템을 이용해서 math 모듈에 작성한 add sub 함수를 바깥으로 내보내서 index.js 인덱스 라고 부를 수 있는 다른 모듈에서(index.js에서 불러와 사용해보기) 불러와 사용할 수 있도록 코드를 작성 해본다 
 
 // commonJS 즉 , common.js 라는 모듈 사용 
@@ -33,10 +34,10 @@ function sub(a,b){
 // 함수의 이름만 명시해도 알아서 이 키는 이 변수의 이름인 add , 값은 add라는 변수에 저장된 함수(function add) 들어가게 된다
 // * sub 도 마찬가지
 
-module.exports = {
-   add,
-   sub,
-};
+// module.exports = {
+//    add,
+//    sub,
+// };
 
 // 최종 CommonJS 모듈 시스템에 의해서 이 두개의 값이 math.js 모듈로부터 내보내진다
 
@@ -44,3 +45,36 @@ module.exports = {
 // -> require("./math");
 
 // require("./math"); 코드를 작성하면 require 함수가 현재 경로의 math 모듈로부터 객체 형태로 내보내진 값을 그대로 반환해준다
+
+// commonJS 보다 훨씬 최신식으로 동작하며 React에서 사용하게 되는 ES모듈 시스템
+// ES 모듈 시스템을 사용하려면 패키지 내부에 앞으로 ES모듈 시스템 사용 하겠다는 설정이 필요함
+
+
+
+// ES 모듈 시스템에서는 모듈로부터 어떠한 값을 내보낼때 export 키워드 뒤에 객체를 리터럴로 생성하고 그 안에 내보내고 싶은 값들을 담아주면 된다
+
+// ES 모듈로 내보내기 3가지
+
+// 1. export {add , sub}; 
+
+// 2. export 함수앞에 붙이기
+
+export function add(a, b) {
+  return a + b;
+};
+
+
+export function sub(a, b) {
+  return a - b;
+};
+
+// 3. 하나의 모듈을 대표하는 디폴트 값을 내보내기
+// export default 사용하기
+
+export default function multiply(a,b){
+    return a * b;
+};
+
+// default 라고 내보내면 multiply라는 함수는 'defalult' 로써 내보내져서 이제 math 모듈을 '대표' 하는 단 하나의 기본 값이 된다
+
+
